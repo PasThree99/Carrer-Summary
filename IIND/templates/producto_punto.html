@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='determinante.css') }}">
+    </head>
+
+
+    <body>
+        <p class="mainText">Ingrese los vectores (u · v)</p>
+        <p>Puede dejar espacios en blanco</p>
+        <br>
+
+        <form method="POST">
+            <label>u = </label>
+            {{ form.csrf_token }}
+            {{ form.u1 }}
+            {{ form.u2 }}
+            {{ form.u3 }}
+            {{ form.u4 }}
+            {{ form.u5 }}
+            <br>
+            <br>
+            <label>v = </label>
+
+            {{ form.v1 }}
+            {{ form.v2 }}
+            {{ form.v3 }}
+            {{ form.v4 }}
+            {{ form.v5 }}
+            <br>
+            <br>
+
+            {{ form.s }}
+        </form>
+    </body>
+
+</html>

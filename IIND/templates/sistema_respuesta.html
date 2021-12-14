@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='determinante.css') }}">
+    </head>
+
+
+    <body>
+        <p class = "mainText">Soluci&oacute;n: </p> 
+        {% set var=['x=','y=','z=','t=','u='] %}
+        {% set c=0 %}
+        {% for i in items %}
+            {{ var[loop.index-1] }} {{ items[loop.index-1] }}
+            <br>
+        {% endfor %}
+       
+    </body>
+
+</html>

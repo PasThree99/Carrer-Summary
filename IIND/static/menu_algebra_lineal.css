@@ -1,0 +1,63 @@
+*{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(3, 3, 209);
+}
+
+body{
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+h1{
+    text-align: center;
+}
+
+.option{
+    text-align: center;
+    font-size: 40px;
+    padding: 2% 0 2% 0;
+    margin: 0 0 0 0;
+}
+
+.title{
+    background-color: rgb(1, 1, 107);
+    padding: 3% 0 3% 0;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+h1{
+    font-weight: 400;
+    background-color: rgb(1, 1, 107);
+}
+
+.pp{
+    background-color: rgb(0, 0, 124);
+}
+.pp:hover{
+    background-color: rgb(2, 2, 110);
+}
+
+.pc{
+    background-color: rgb(2, 2, 145);
+}
+.pc:hover{
+    background-color: rgb(1, 1, 133);
+}
+.de{
+    background-color: rgb(3, 3, 168);
+}
+.de:hover{
+    background-color: rgb(2, 2, 153);
+}
+.ss{
+    background-color: rgb(3, 3, 184);
+}
+.ss:hover{
+    background-color: rgb(1, 1, 163);
+}
+

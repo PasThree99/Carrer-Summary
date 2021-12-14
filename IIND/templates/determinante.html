@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='determinante.css') }}">
+    </head>
+
+
+    <body>
+        <p class="mainText">Ingrese los numeros de la matriz</p>
+
+
+        <form method="POST">
+            {{ form.csrf_token }}
+            {{ form.n1 }}
+            {{ form.n2 }}
+            {{ form.n3 }}
+            {{ form.n4 }}
+            {{ form.n5 }}
+            <br>
+            <br>
+            {{ form.n6 }}
+            {{ form.n7 }}
+            {{ form.n8 }}
+            {{ form.n9 }}
+            {{ form.n10 }}
+            <br>
+            <br>
+            {{ form.n11 }}
+            {{ form.n12 }}
+            {{ form.n13 }}
+            {{ form.n14 }}
+            {{ form.n15 }}
+            <br>
+            <br>
+            {{ form.n16 }}
+            {{ form.n17 }}
+            {{ form.n18 }}
+            {{ form.n19 }}
+            {{ form.n20 }}
+            <br>
+            <br>
+            {{ form.n21 }}
+            {{ form.n22 }}
+            {{ form.n23 }}
+            {{ form.n24 }}
+            {{ form.n25 }}
+            <br>
+            <br>
+            {{ form.s }}
+        </form>
+    </body>
+
+</html>

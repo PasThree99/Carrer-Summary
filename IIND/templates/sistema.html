@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='determinante.css') }}">
+    </head>
+
+
+    <body>
+        <p class="mainText">Ingrese el sistema</p>
+
+        <br>
+
+        <form method="POST">
+            {{ form.csrf_token }}
+            {{ form.n1 }} x + {{ form.n2 }} y + {{ form.n3 }} z + {{ form.n4 }} t + {{ form.n5 }} u =  {{ form.r1 }}           <br><br> 
+            {{ form.n6 }} x + {{ form.n7 }} y + {{ form.n8 }} z + {{ form.n9 }} t + {{ form.n10 }} u =  {{ form.r2 }}          <br><br>  
+            {{ form.n11 }} x + {{ form.n12 }} y + {{ form.n13 }} z + {{ form.n14 }} t + {{ form.n15 }} u =  {{ form.r3 }}      <br><br>      
+            {{ form.n16 }} x + {{ form.n17 }} y + {{ form.n18 }} z + {{ form.n19 }} t + {{ form.n20 }} u =  {{ form.r4 }}      <br><br>      
+            {{ form.n21 }} x + {{ form.n22 }} y + {{ form.n23 }} z + {{ form.n24 }} t + {{ form.n25 }} u =  {{ form.r5 }}      <br><br>
+            {{ form.s }}
+        </form>
+    </body>
+
+</html>

@@ -1,0 +1,83 @@
+*{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-family: sans-serif;
+}
+
+.mainTitle{
+    text-align: center;
+    background-color: blue;
+}
+
+.titleText{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 50px;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.menuOption{
+    text-align: center;
+    color: black;
+    text-decoration: none;  
+}
+.optionText{
+    font-size: 25px;
+    padding-bottom: 25%;
+    padding-top: 25%;
+}
+
+
+.al{
+    background-color: rgb(36, 1, 161);
+}
+.al:hover{
+    transition: all 0.3s ease;
+    background-color: rgb(32, 3, 139);
+}
+
+
+.ce{
+    background-color: rgb(255, 183, 0);
+}
+.ce:hover{
+    transition: all 0.3s ease;
+    background-color: rgb(172, 124, 3);
+}
+
+.ed{
+    background-color: dodgerblue;
+}
+.ed:hover{
+    transition: all 0.3s ease;
+    background-color: rgb(19, 92, 165);
+}
+
+
+.cm{
+    background-color: rgb(115, 192, 0);
+}
+.si{
+    background-color: indigo;
+}
+.es{
+    background-color: lightsalmon;
+}
+.es:hover{
+    transition: all 0.3s ease;
+    background-color: rgb(190, 117, 88);
+}
+.na{
+    background-color: mediumseagreen;
+}
+.mn{
+    background-color: midnightblue;
+}
+.uk{
+    background-color: gray;
+}

@@ -94,9 +94,9 @@ def sistema():
 
     return render_template("sistema.html",form = f)
 
-@app.route("/estadistica")
+@app.route("/control_estadistico")
 def estadistica():
-    return render_template("menu_estadistica.html")
+    return render_template("menu_control_estadistico.html")
 
 
 @app.route("/upload", methods=['GET', 'POST'])

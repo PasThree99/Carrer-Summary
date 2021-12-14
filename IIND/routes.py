@@ -95,7 +95,7 @@ def sistema():
     return render_template("sistema.html",form = f)
 
 @app.route("/control_estadistico")
-def estadistica():
+def menu_control_estadistico():
     return render_template("menu_control_estadistico.html")
 
 

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Upload an excel file</title>
+    </head>
+    <body>
+        <h1>Carga tu archivo de excel</h1>
+        <p>Debe llevar encabezados. En la primera columna va el numero de muestra,y en las siguientes n columnas van las mediciones</p>
+        <form action="" method=post enctype=multipart/form-data>
+            <p><input type=file name=file> <br>
+                <label>A2</label>
+                <input type="number" step=0.01 name=A2><br>
+                <label>D3</label>
+                <input type="number" step=0.01 name=D3><br>
+                <label>D4</label>
+                <input type="number" step=0.01 name=D4><br>
+                <input type=submit value=Upload>
+        </form>
+    </body>
+</html>

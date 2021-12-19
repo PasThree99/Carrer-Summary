@@ -6,6 +6,7 @@ from numpy.linalg import det,inv
 from numpy import cross,dot
 from flask import request
 import pandas as pd
+import IIND.graficosDeControl as gc
 
 
 error_string = ""
@@ -96,7 +97,21 @@ def sistema():
 
 @app.route("/control_estadistico")
 def menu_control_estadistico():
+
     return render_template("menu_control_estadistico.html")
+
+@app.route("/control_estadistico/GraficoX",methods=["POST","GET"])
+def graficoX():
+    if request.method == 'POST':
+        f = request.files['file']
+        data_xls = pd.DataFrame(pd.read_excel(f))
+        a2 = request.values.get('A2')
+        d3 = request.values.get('D3')
+        d4 = request.values.get('D4')
+        image = gc.graficoX(data_xls)
+        
+        return render_template('resultado_grafico_de_control.html', image= image)
+    return render_template("graficoX.html")
 
 
 @app.route("/upload", methods=['GET', 'POST'])

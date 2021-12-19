@@ -113,6 +113,17 @@ def graficoX():
         return render_template('resultado_grafico_de_control.html', image= image)
     return render_template("graficoX.html")
 
+@app.route("/control_estadistico/GraficoP",methods=["POST","GET"])
+def graficoP():
+    if request.method == 'POST':
+        f = request.files['file']
+        data_xls = pd.DataFrame(pd.read_excel(f))
+        n = request.values.get('n')
+        
+        image = gc.graficoP(data_xls,n)
+        
+        return render_template('resultado_grafico_de_control.html', image= image)
+    return render_template("graficoP.html")
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload_file():

@@ -7,6 +7,7 @@ import os
 import base64
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from IIND.tablas import coeficientesDeControl
+from math import sqrt
 
 
 def graficoX(datos):
@@ -77,3 +78,43 @@ def graficoX(datos):
     #plt.savefig(path)
     return pngImageB64String
 
+def graficoP(datos,n):
+    def desviacionEstandar(p,n):
+        return sqrt(3*(p*(1-p)/n))
+   
+    n = int(n)
+    datos = pd.DataFrame(datos)
+
+    datos = datos.iloc[:,1:]
+    cols=datos.columns
+
+
+    datos[cols[0]] = datos[cols[0]]/n
+
+    p = np.mean(datos[cols[0]])
+
+
+    LCS = p + desviacionEstandar(p,n)
+    LCC = p
+    LCI = p - desviacionEstandar(p,n)
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    ax.plot(range(len(datos)),np.ones(len(datos))*LCS,label = "LCS")
+    ax.plot(range(len(datos)),np.ones(len(datos))*LCI,label = "LCI")
+    ax.plot(range(len(datos)),np.ones(len(datos))*LCC,label = "LCC")
+    ax.plot(range(len(datos)),datos[cols[0]])
+    ax.grid()
+    ax.title.set_text('Gráfico P')
+    ax.legend()
+    #ax.set_ylim(LCI-2,LCS+2)
+    pngImage = io.BytesIO()
+    FigureCanvas(fig).print_png(pngImage)
+
+    pngImageB64String = "data:image/png;base64,"
+    pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
+    path = os.getcwd()
+    path += "/IIND/static/images/cross.png"
+    #plt.savefig(path)
+    return pngImageB64String

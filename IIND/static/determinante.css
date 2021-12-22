@@ -4,12 +4,12 @@
 }
 
 body{
-    background-color: rgb(3, 3, 209);
+    background-color: rgba(84, 185, 135, 0.89);;
     text-align: center;
 }
 
 .mainText{
-    font-size: 30px;
+    font-size: 60px;
 }
 
 .result{
@@ -20,5 +20,20 @@ body{
 .result_pc{
     display: block;
     text-align: center;
+}
+
+input{
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    border-width: 0;
+}
+
+input[type=submit]:hover{
+    background-color: rgb(94, 94, 128);
+    transition: all 0.3s ease;
+}
+form{
+    font-size: 30px;
 }
 

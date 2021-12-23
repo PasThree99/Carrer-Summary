@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='parametrica.css') }}">
+    </head>
+
+
+    <body>
+        <p class="mainText">Ingrese las expresiones y el intervalo [a,b] a evaluar</p>
+        <p>Nota: sus expreiones deben llevar todos los operadores</p>
+        <p>Algunos ejemplos de expreiones correctamente escritas son:</p>
+        <p> 5*x + 8 </p>
+        <p> sin(t) </p>
+        <p>x**2 + 5*x + 8 </p>
+        <p> 3*pi + 2*k </p>
+
+        <br>
+
+        <form method="POST">
+         
+            <label>variable</label>
+            <input type="text" name = "var"> <br>
+
+            <label>x=</label>
+            <input type="text" name = "x"> <br>
+            
+            <label>y=</label>
+            <input type="text" name = "y"> <br>
+
+            <label>z=</label>
+            <input type="text" name = "z"> <br>
+            
+            <label>a</label>
+            <input type="number" name = "a"> <br>
+            
+            <label>b</label>
+            <input type="number" name = "b"> <br>
+
+
+            <input type="submit">
+        </form>
+    </body>
+
+</html>

@@ -8,6 +8,7 @@ from flask import request
 import pandas as pd
 import IIND.graficosDeControl as gc
 import IIND.numerosAleatorios as na
+import IIND.multivariatePlots as mvp
 
 
 error_string = ""
@@ -198,6 +199,25 @@ def en_rango():
             return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros NO soguen una distribución uniforme con α=0.05")
 
     return render_template('en_rango.html')
+
+@app.route("/multivariado")
+def menu_multivariado():
+    return render_template("menu_multivariado.html")
+
+@app.route("/multivariado/parametrica",methods = ["GET","POST"])
+def parametrica():
+    if request.method == "POST":
+        var = request.values.get("var")
+        a = request.values.get("a")
+        b = request.values.get("b")
+        x = request.values.get("x")
+        y = request.values.get("y")
+        z = request.values.get("z")
+        res = mvp.parametricPlot(x,y,z,var,(a,b))
+        return render_template('plot.html',image=res)
+
+
+    return render_template("parametrica.html")
 @app.route("/error")
 def error():
     return render_template("error.html",item = error_string)

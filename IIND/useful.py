@@ -202,7 +202,7 @@ def plotVectors(u,v,uxv):
     pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
     path = os.getcwd()
     path += "/IIND/static/images/cross.png"
-    plt.savefig(path)
+    #plt.savefig(path)
     return pngImageB64String
 
 

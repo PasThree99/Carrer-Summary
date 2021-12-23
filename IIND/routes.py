@@ -168,7 +168,36 @@ def congruencial_multiplicativo():
 
     return render_template('congruencial_multiplicativo.html')
 
+@app.route("/numeros_aleatorios/congruencial_mixto",methods=["POST","GET"])
+def congruencial_mixto():
+    if request.method == "POST":
+        n = int(request.values.get("n"))
+        seed = int(request.values.get("semilla"))
+        mod = int(request.values.get("mod"))
+        a = int(request.values.get("a"))
+        c = int(request.values.get("c"))
+        res = na.congruencialMixto(seed,mod,a,c,n)
+        if(res[1] == True):
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros siguen una distribución uniforme con α=0.05")
+        else:
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros NO soguen una distribución uniforme con α=0.05")
 
+    return render_template('congruencial_mixto.html')
+
+@app.route("/numeros_aleatorios/en_rango",methods=["POST","GET"])
+def en_rango():
+    if request.method == "POST":
+        n = int(request.values.get("n"))
+        a = int(request.values.get("a"))
+        b = int(request.values.get("b"))
+        
+        res = na.enRango(a,b,n)
+        if(res[1] == True):
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros siguen una distribución uniforme con α=0.05")
+        else:
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros NO soguen una distribución uniforme con α=0.05")
+
+    return render_template('en_rango.html')
 @app.route("/error")
 def error():
     return render_template("error.html",item = error_string)

@@ -1,5 +1,7 @@
+import re
 from scipy.stats import chi2
 from math import ceil
+from random import randint
 
 
 
@@ -103,6 +105,36 @@ def cuadradosDeEnmedio(seed:int, n:int):
         c += 1
         
     return (lf,sigueDistrUniforme(lf))
+
+
+def congruencialMixto(seed:int, mod:int, a:int, c:int, n:int):
+    semilla=seed
+    modelo=lambda x: a*x + c
+
+    k=0
+
+    num_act=0
+    num_obt=semilla
+
+
+    num_max=n
+
+    lf = []
+    while(num_act!=semilla and k<num_max):
+        num_act=num_obt
+        num_obt=modelo(num_act) % mod
+        lf.append(num_obt/mod)
+        num_act=num_obt
+        k+=1
+    return (lf,sigueDistrUniforme(lf))
+
+def enRango(a:int, b:int, n:int):
+    lf = []
+    for i in range(n):
+        x = randint(a,b)
+        lf.append(x)
+    return(lf,True)
+
 
 
 

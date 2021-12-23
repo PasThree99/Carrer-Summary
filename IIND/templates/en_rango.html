@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='determinante.css') }}">
+    </head>
+
+
+    <body>
+        <p class="mainText">Ingrese los datos, intervalo [a,b]</p>
+
+        <br>
+
+        <form method="POST">
+         
+            <label>a</label>
+            <input type="number" name = "a"> <br>
+            <label>b</label>
+            <input type="number" name = "b"> <br>
+        
+            <label>n</label>
+            <input type="number" name = "n"> <br>
+            <input type="submit">
+        </form>
+    </body>
+
+</html>

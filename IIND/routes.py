@@ -7,6 +7,7 @@ from numpy import cross,dot
 from flask import request
 import pandas as pd
 import IIND.graficosDeControl as gc
+import IIND.numerosAleatorios as na
 
 
 error_string = ""
@@ -128,11 +129,45 @@ def graficoP():
 @app.route("/upload", methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        print(request.files['file'])
+        #print(request.files['file'])
         f = request.files['file']
         data_xls = pd.read_excel(f)
         return data_xls.to_html()
     return render_template("upload.html")
+
+@app.route("/numeros_aleatorios")
+def numeros_aleatorios():
+    return render_template('menu_numeros_aleatorios.html')
+
+@app.route("/numeros_aleatorios/cuadrados_de_enmedio",methods=["POST","GET"])
+def cuadrados_de_enmedio():
+    if request.method == "POST":
+        n = int(request.values.get("n"))
+        seed = int(request.values.get("semilla"))
+        res = na.cuadradosDeEnmedio(seed,n)
+       
+        if(res[1] == True):
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros siguen una distribución uniforme con α=0.05")
+        else:
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros NO soguen una distribución uniforme con α=0.05")
+
+    return render_template('cuadrados_de_enmedio.html')
+
+@app.route("/numeros_aleatorios/congruencial_multiplicativo",methods=["POST","GET"])
+def congruencial_multiplicativo():
+    if request.method == "POST":
+        n = int(request.values.get("n"))
+        seed = int(request.values.get("semilla"))
+        mod = int(request.values.get("mod"))
+        a = int(request.values.get("a"))
+        res = na.congruencialMultiplicativo(seed,mod,a,n)
+        if(res[1] == True):
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros siguen una distribución uniforme con α=0.05")
+        else:
+            return render_template('resultado_numeros_aleatorios.html',mylist = res[0],item="Los numeros NO soguen una distribución uniforme con α=0.05")
+
+    return render_template('congruencial_multiplicativo.html')
+
 
 @app.route("/error")
 def error():

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='menu.css') }}">
+    </head>
+    <body>
+        <div class="title ce">
+            <h1 class="ce"> N&uacute;meros aleatorios </h1>
+        </div>
+
+        <a class="option" href="{{ url_for ('congruencial_multiplicativo' ) }}">
+            M&eacute;todo congruencial multiplicativo
+        </a>
+        
+        
+        
+        <a class="option" href="#">
+            M&eacute;todo congruencial mixto
+        </a>
+        
+        
+        
+        <a class="option" href=" {{ url_for( 'cuadrados_de_enmedio' ) }} ">
+            M&eacute;todo de los cuadrados de enmedio
+        </a>
+        
+
+        <a class="option" href="#">
+            Numeros aleatorios en un rango
+        </a>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet href="{{ url_for('static',filename='determinante.css') }}">
+    </head>
+
+
+    <body>
+        <p class="mainText">Ingrese los datos, modelo: (a*x) % mod</p>
+
+        <br>
+
+        <form method="POST">
+            <label>semilla</label>
+            <input type="number" name = "semilla"> <br>
+            <label>a</label>
+            <input type="number" name = "a"> <br>
+            <label>mod</label>
+            <input type="number" name = "mod"> <br>
+            <label>n</label>
+            <input type="number" name = "n"> <br>
+            <input type="submit">
+        </form>
+    </body>
+
+</html>

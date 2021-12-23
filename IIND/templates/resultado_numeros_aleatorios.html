@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Resulado</title>
+        <link rel=stylesheet href="{{ url_for('static',filename='aleatorios.css') }}">
+    </head>
+    <body>
+        <div class="numbers"> 
+            {% for i in mylist %}
+            {{ i }} <br>
+            {% endfor %}
+        </div>
+        <div> {{ item }}</div>
+    </body>
+</html>
